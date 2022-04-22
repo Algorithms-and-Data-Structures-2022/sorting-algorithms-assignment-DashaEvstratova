@@ -19,6 +19,15 @@ namespace assignment {
 
     // вычисляем индекс середины заданной области
     const int middle = middle_of(start, stop);
+    if (middle > start && middle < stop || middle > stop && middle < start){
+      return middle;
+    }
+    if (start > middle && start < stop || start > stop && start < middle){
+      return start;
+    }
+    if (stop > middle && stop < start || stop > start && stop < middle){
+      return stop;
+    }
 
     // поиск медианы среди трех элементов по индексам start, middle и stop
 
@@ -52,15 +61,17 @@ namespace assignment {
     for (int index = start; index < stop; index++) {
 
       if (arr[index] < pivot_value) {
-        // Напишите здесь ваш код ...
+          std::swap(arr[index], arr[curr_pivot_index]);
+          curr_pivot_index++;
       }
+
     }
 
     // разбиение завершилось, перемещаем выбранный опорный элемент на вычисленное ранее место
     std::swap(arr[curr_pivot_index], arr[stop]);
 
     // возвращаем индекс опорного элемента
-    return -1 /* здесь что-то не так ... */;
+    return curr_pivot_index/* здесь что-то не так ... */;
   }
 
 }  // namespace assignment
