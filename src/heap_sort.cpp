@@ -26,7 +26,7 @@ namespace assignment {
     // - индекс идет до корня (включительно)
 
     const int size = static_cast<int>(arr.size());
-    int startindex = (((size - 1) - 1) / 2);
+    int startindex = size/2-1;
     for (int i = startindex; i >= 0; i--) {
       Heapify(arr, size, i);
     }
@@ -36,7 +36,7 @@ namespace assignment {
     assert(heap_size >= 0 && heap_size <= arr.size() && index >= 0 && index < heap_size);
 
     // максимальный элемент устанавливаем в значение текущего индекса
-    for (int largest = index; largest < heap_size; largest++) {
+    for (int largest = index; largest < heap_size; ) {
 
       // вычисляем индексы потомков для текущего элемента
       const int left_child = LeftChild(index);
