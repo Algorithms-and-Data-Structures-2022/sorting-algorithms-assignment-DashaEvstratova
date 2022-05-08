@@ -17,7 +17,7 @@ namespace assignment {
 
     // слияния подмассивов (пока не достигли конца одного из подмассивов)
     while (left_offset <= middle && right_offset <= stop) {
-      if (arr[left_offset]< arr[right_offset]){
+      if (arr[left_offset]<= arr[right_offset]){
         buf[buf_offset] = arr[left_offset];
         left_offset++;
       }

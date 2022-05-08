@@ -19,13 +19,13 @@ namespace assignment {
 
     // вычисляем индекс середины заданной области
     const int middle = middle_of(start, stop);
-    if (middle > start && middle < stop || middle > stop && middle < start){
+    if (arr[middle] >= arr[start] && arr[middle] <= arr[stop] || arr[middle] >= arr[stop] && arr[middle] <= arr[start]){
       return middle;
     }
-    if (start > middle && start < stop || start > stop && start < middle){
+    if (arr[start] >= arr[middle] && arr[start] <= arr[stop] || arr[start] >= arr[stop] && arr[start] <= arr[middle]){
       return start;
     }
-    if (stop > middle && stop < start || stop > start && stop < middle){
+    if (arr[stop] >= arr[middle] && arr[stop] <= arr[start] || arr[stop] >= arr[start] && arr[stop] <= arr[middle]){
       return stop;
     }
 
