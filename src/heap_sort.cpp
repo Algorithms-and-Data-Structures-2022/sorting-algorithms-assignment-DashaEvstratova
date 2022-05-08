@@ -46,7 +46,7 @@ namespace assignment {
       if (left_child < heap_size && arr[left_child]>arr[largest]) {
         largest = left_child;
       }
-      else if (right_child < heap_size && arr[right_child]>arr[largest]) {
+      if (right_child < heap_size && arr[right_child]>arr[largest]) {
         largest = right_child;
       }
       // если текущий элемент больше своих потомков, то он находится на правильном месте (свойство макс. кучи)
